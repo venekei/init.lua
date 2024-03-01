@@ -10,16 +10,6 @@ use {
 		vim.cmd('colorscheme catppuccin')
 	end
 } 
-use {
-	'folke/which-key.nvim',
-	config = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 300
-		require("which-key").setup {
-		}
-	end
-
-}
 use 'itchyny/lightline.vim'
 use 'tpope/vim-fugitive'
 use {
@@ -38,5 +28,12 @@ use {
     }
 
 }
+use("nvim-treesitter/nvim-treesitter-context")
+use 'm4xshen/autoclose.nvim'
+use({
+    "folke/trouble.nvim",
+})
+use("akinsho/toggleterm.nvim")
+use("mbbill/undotree")
+use("Pocco81/auto-save.nvim")
 end)
-

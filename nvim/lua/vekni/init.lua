@@ -1,3 +1,2 @@
-print("Init vekni")
-require("vekni.set")
-require("vekni.keymap")
+require("vekni.mapKeys")
+require("vekni.vimSet")

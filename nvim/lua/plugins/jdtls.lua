@@ -1,10 +1,11 @@
 return {
-    {"mfussenegger/nvim-jdtls.nvim",
-    config = function ()
-        require("jdtls").start_on_attach({
-            cmd = {'~/eclipse.jdt.ls/bin/jdtls'},
-            root_dir =vim.fs.driname(vim.fs.find( {"settings.gradle", "gradlew"}, {upward = true })[1]),
-        })
-    end
-    }
+	'mfussenegger/nvim-jdtls',
+	config = function ()
+		local c =  {
+				cmd = {'/home/vekni/.local/share/nvim/mason/packages/jdtls/bin/jdtls'},
+				root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew',"settings.gradle"}),
+		}
+		require('jdtls').start_or_attach(c)
+		end
+
 }

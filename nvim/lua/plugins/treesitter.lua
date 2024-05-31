@@ -4,7 +4,7 @@ return {
 		config = function()
 				local c = require("nvim-treesitter.configs")
 				c.setup ({
-						ensure_installed = {"java", "groovy", "lua"},
+						ensure_installed = {"java", "groovy", "lua", "go", "gomod"},
 				})
 		end
 }

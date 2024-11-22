@@ -9,3 +9,5 @@ vim.keymap.set("n", "<leader>pb", "<cmd>bprevious<CR>")
 -- diff tool keybindings --
 vim.api.nvim_set_keymap("n", "<leader>dn", "]c", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>dp", "[c", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>dg", "<cmd>diffget<cr>")
+vim.keymap.set("n", "<leader>dp", "<cmd>diffput<cr>")

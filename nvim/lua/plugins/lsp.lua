@@ -28,12 +28,12 @@ return {
             lspconfig.gopls.setup({
                 capabilities = capabilities
             })
-	    lspconfig.nil_ls.setup({
-		capabilities = capabilities
-	    })
-	    lspconfig.azure_pipelines_ls.setup({
-	    	capabilities = capabilities
-	    })
+            lspconfig.nil_ls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.azure_pipelines_ls.setup({
+                capabilities = capabilities
+            })
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, {})

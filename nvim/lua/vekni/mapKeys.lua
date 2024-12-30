@@ -3,7 +3,7 @@ vim.keymap.set("n","<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>=", "<cmd>normal gg=G<CR>")
 vim.keymap.set("n", "<leader>bc", "<cmd>bd!<CR>")
 vim.keymap.set("n", "<leader>bs", "<cmd>w<CR>bd<CR>")
-vim.keymap.set("n", "<leader>bc", "<cmd>bnext<CR>")
+vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>")
 vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>")
 
 -- diff tool keybindings --

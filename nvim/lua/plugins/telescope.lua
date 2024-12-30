@@ -5,7 +5,7 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        tag="0.1.6",
+        tag = "0.1.6",
         dependencies = {
             "nvim-lua/plenary.nvim"
         },
@@ -13,7 +13,7 @@ return {
             require("telescope").setup({
                 defaults = {
                     file_ignore_patterns = {
-                        "%.class$", "%.git$","%.jar$"
+                        "%.class$", "%.git$", "%.jar$"
                     },
                 },
                 extensions = {
@@ -30,11 +30,17 @@ return {
             })
             require("telescope").load_extension("ui-select")
             require("telescope").load_extension("fzf")
+            require("telescope").load_extension("refactoring")
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>ff", builtin.find_files)
             vim.keymap.set("n", "<leader>fb", builtin.buffers)
             vim.keymap.set("n", "<leader>fg", builtin.grep_string)
             vim.keymap.set("n", "<leader>ft", builtin.live_grep)
-        end},
+            vim.keymap.set({ "n", "x" },
+                "<leader>fr",
+                function() require("telescope").extensions.refactoring.refactors() end
+            )
+        end
+    },
 
-    }
+}

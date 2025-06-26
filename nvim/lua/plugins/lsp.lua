@@ -11,6 +11,7 @@ return {
         lazy = false,
         opts = {
             auto_install = true,
+            ensure_installed = {"lua_ls", "bashls", "jdtls", "kotlin_language_server"}
         },
     },
     {
@@ -25,15 +26,18 @@ return {
             lspconfig.bashls.setup({
                 capabilities = capabilities
             })
-            lspconfig.gopls.setup({
+            lspconfig.jdtls.setup({
                 capabilities = capabilities
             })
-            lspconfig.nil_ls.setup({
-                capabilities = capabilities
-            })
-            lspconfig.azure_pipelines_ls.setup({
-                capabilities = capabilities
-            })
+            lspconfig.kotlin_language_server.setup({
+                cmd = {
+                    vim.fn.stdpath("data") .. "/mason/packages/kotlin-language-server/bin/kotlin-language-server"
+                },
+                root_dir = lspconfig.util.root_pattern("settings.gradle.kts", "settings.gradle", "build.gradle.kts", "build.gradle", ".git"),
+                on_attach = function(client, bufnr)
+                    -- Optional: your on_attach function
+                end,
+            }) 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, {})
